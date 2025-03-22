@@ -847,7 +847,7 @@ no-error-kafka)
   echo "Checkout target sources ..."
   checkout_from https://github.com/apache/kafka
   cd .ci-temp/kafka
-#  echo "allprojects { repositories { mavenLocal() } tasks.withType(ScalaCompile) { configure(scalaCompileOptions.forkOptions) { jvmArgs = ['-Xss4m', '-Xmx2048m'] } }}" > localRepo.gradle
+  echo "allprojects { repositories { mavenLocal() } tasks.withType(ScalaCompile) { configure(scalaCompileOptions.forkOptions) { jvmArgs = ['-Xss4m', '-Xmx2048m'] } }}" > localRepo.gradle
   ./gradlew --stacktrace --info --console=plain --no-daemon checkstyleMain checkstyleTest -x test \
     -PcheckstyleVersion="${CS_POM_VERSION}" \
     -I localRepo.gradle \
