@@ -842,7 +842,9 @@ no-error-spotbugs)
 
 no-error-kafka)
   CS_POM_VERSION="$(getCheckstylePomVersion)"
+  echo "Circle job is: ${CIRCLE_JOB}"
   echo CS_version: "${CS_POM_VERSION}"
+  echo "Java options are = ${_JAVA_OPTIONS}"
   mvn -e --no-transfer-progress clean install -Pno-validations
   echo "Checkout target sources ..."
   checkout_from https://github.com/dejan2609/kafka
