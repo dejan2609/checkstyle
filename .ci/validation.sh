@@ -843,6 +843,7 @@ no-error-spotbugs)
 no-error-kafka)
   CS_POM_VERSION="$(getCheckstylePomVersion)"
   echo "########## Show env variables: START ########### "
+  echo "FOO value is: ${FOO}"
   echo "CS_version: ${CS_POM_VERSION}"
   echo "Circle job name is: ${CIRCLE_JOB}"
   echo "_JAVA_OPTIONS are = ${_JAVA_OPTIONS}"

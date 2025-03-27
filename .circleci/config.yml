@@ -144,6 +144,8 @@ workflows:
       - validate-with-maven-script:
           name: "no-error-kafka"
           image-name: "cimg/openjdk:21.0.5"
+          environment:
+            FOO: bar
           command: "./.ci/validation.sh no-error-kafka"
 #      - validate-with-maven-script:
 #          name: "no-exception-struts"
